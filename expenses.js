@@ -16,20 +16,41 @@ let expensesExamples = [
   },
 ];
 
+let Date = {
+  1: "Январь",
+  2: "Февраль",
+  3: "Март",
+  4: "Апрель",
+  5: "Май",
+  6: "Июнь",
+  7: "Июль",
+  8: "Август",
+  9: "Сентябрь",
+  10: "Октябрь",
+  11: "Ноябрь",
+  12: "Декабрь",
+};
+
 function calculateExpensesOver1000(yearlyExpences) {
   let result = 0;
+  let ind = 0;
+  let unusedMonths = [];
   let usedNumbers = []; //чтобы увидеть, какие данные мы использовали для расчёта
   let unusedNumbers = []; //чтобы увидеть, какие данные мы отбросили для расчёта
   yearlyExpences.forEach((element) => {
+    ind +=1;
     if (element > 1000) {
       result += element;
-      usedNumbers.push(element);
+    //   usedNumbers.push(element);
     } else {
-      unusedNumbers.push(element);
+    //   unusedNumbers.push(element);
+      unusedMonths.push(Date[ind])
     }
   });
-  console.log("Использованы для расчёта: " + usedNumbers);
-  console.log("Не использовали для расчёта: " + unusedNumbers);
+//   console.log("Использованы для расчёта: " + usedNumbers);
+//   console.log("Не использовали для расчёта: " + unusedNumbers);
+  console.log("Неиспользованные для расчёта месяцы: " + unusedMonths);
+
   return result;
 }
 
