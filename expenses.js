@@ -30,19 +30,21 @@ function calculateExpensesOver1000(yearlyExpences) {
   });
   console.log("Использованы для расчёта: " + usedNumbers);
   console.log("Не использовали для расчёта: " + unusedNumbers);
-
   return result;
 }
 
 function testSampleExpences() {
-    let ind = 0;
+  let ind = 0;
   expensesExamples.forEach((expense) => {
-    ind +=1;
+    ind += 1;
     let totalExpenses = calculateExpensesOver1000(expense.yearlyExpences);
     console.log(
-      "Сумма расходов выше 1000 для "+ ind +"го массива: " + totalExpenses + "\n"
+      "Сумма расходов выше 1000 для " +
+        ind +
+        "го массива: " +
+        totalExpenses +
+        "\n"
     );
-    console.log();
   });
 }
 
